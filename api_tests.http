@@ -1,0 +1,45 @@
+### VSCode REST Client 拡張機能を使用したTODO API テスト
+
+@baseUrl = http://localhost:8000
+
+### ルートエンドポイントへのGETリクエスト
+GET {{baseUrl}}
+
+### すべてのTODOを取得
+GET {{baseUrl}}/todos
+
+### 特定のTODOを取得 (ID=1の場合)
+GET {{baseUrl}}/todos/1
+
+### 新しいTODOを作成
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "買い物に行く",
+  "description": "牛乳、卵、パンを購入する",
+  "completed": false
+}
+
+### 別のTODOを作成
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "メールを確認する",
+  "description": "重要なメールに返信する",
+  "completed": false
+}
+
+### TODOを更新 (ID=1の場合)
+PUT {{baseUrl}}/todos/1
+Content-Type: application/json
+
+{
+  "title": "買い物に行く",
+  "description": "牛乳、卵、パン、チーズを購入する",
+  "completed": true
+}
+
+### TODOを削除 (ID=2の場合)
+DELETE {{baseUrl}}/todos/2

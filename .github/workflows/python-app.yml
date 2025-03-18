@@ -20,9 +20,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest pytest-cov
 
+    - name: Print Python version and installed packages
+      run: |
+        python --version
+        pip list
+
+    - name: Print app directory contents
+      run: |
+        ls -la app
+
     - name: Run tests with coverage
       run: |
-        pytest --cov=app --cov-report=term-missing
+        pytest --cov=app --cov-report=term-missing -v
 
     - name: Commit coverage report
       run: |
